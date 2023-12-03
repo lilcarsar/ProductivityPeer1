@@ -12,7 +12,7 @@ function ToDoForm({ addTask }) {
         onChangeText={(text) => setTaskText(text)}
         value={taskText}
       />
-      <Button title="Add Task" onPress={() => addTask(taskText)} />
+      <Button title="Add Task" onPress={() => addTask(taskText)} color="#654321" />
     </View>
   );
 }
@@ -24,14 +24,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 20,
     marginTop: 20,
+    backgroundColor: '#D2B48C', // light brown
   },
   input: {
     flex: 1,
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#A0522D', // brown
     paddingHorizontal: 10,
     paddingVertical: 5,
     marginRight: 10,
+    color: '#FFFFFF', // white
   },
 });
 

@@ -1,4 +1,3 @@
-// GoalsPage.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
@@ -29,11 +28,11 @@ const GoalsPage = () => {
         onChangeText={(text) => setNewGoal({ ...newGoal, progress: parseInt(text) })}
         keyboardType="numeric"
       />
-      <Button title="Add Goal" onPress={addGoal} />
+      <Button title="Add Goal" onPress={addGoal} color="#A52A2A" />
       {/* Display goals */}
       <View>
         {goals.map((goal) => (
-          <Text key={goal.id}>{goal.title} - Progress: {goal.progress}%</Text>
+          <Text key={goal.id} style={styles.goalText}>{goal.title} - Progress: {goal.progress}%</Text>
         ))}
       </View>
     </View>
@@ -45,11 +44,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#D2B48C', // light brown
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: '#FFFFFF', // white
   },
   input: {
     height: 40,
@@ -57,7 +58,15 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
+    color: '#FFFFFF', // white
+    backgroundColor: '#A52A2A', // brown
   },
+  goalText: {
+    color: '#FFFFFF', // white
+    backgroundColor: '#A52A2A', // brown
+    padding: 10,
+    marginVertical: 5,
+  }
 });
 
 export default GoalsPage;
