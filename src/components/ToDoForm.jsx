@@ -4,15 +4,22 @@ import { View, TextInput, Button, StyleSheet } from 'react-native';
 function ToDoForm({ addTask }) {
   const [taskText, setTaskText] = useState('');
 
+  const handleAddTask = () => {
+    if (taskText.trim() !== '') {
+      addTask(taskText);
+      setTaskText('');
+    }
+  };
+
   return (
     <View style={styles.form}>
       <TextInput
         style={styles.input}
-        placeholder="Add a new task..."
+        placeholder="Add a new task"
         onChangeText={(text) => setTaskText(text)}
         value={taskText}
       />
-      <Button title="Add Task" onPress={() => addTask(taskText)} color="#654321" />
+      <Button title="Add Task" onPress={handleAddTask} color="#DFD1AD" />
     </View>
   );
 }
@@ -24,16 +31,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 20,
     marginTop: 20,
-    backgroundColor: '#D2B48C', // light brown
+    backgroundColor: '#FFFFFF',
+    borderRadius: 15,
+    padding: 10,
+    marginBottom: 20,
+
   },
   input: {
     flex: 1,
     borderWidth: 1,
-    borderColor: '#A0522D', // brown
+    borderColor: '#A9AFB2',
     paddingHorizontal: 10,
     paddingVertical: 5,
     marginRight: 10,
-    color: '#FFFFFF', // white
+    color: '#000000',
+    borderRadius: 15,
   },
 });
 

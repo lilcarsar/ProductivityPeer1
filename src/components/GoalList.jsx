@@ -1,13 +1,14 @@
 import React from 'react';
 import { ScrollView, Pressable, View, Text, StyleSheet } from 'react-native';
 
-function ToDoList({ tasks, toggleTask }) {
+function GoalList({ goals, toggleGoal }) {
   return (
     <ScrollView>
-      {tasks.map((task, index) => (
-        <Pressable key={index} onPress={() => toggleTask(index)}>
-          <View style={[styles.task, task.completed ? styles.completed : styles.incomplete]}>
-            <Text style={styles.taskText}>{task.title}</Text>
+      {goals.map((goal, index) => (
+        <Pressable key={index} onPress={() => toggleGoal(index)}>
+          <View style={[styles.goal, goal.completed ? styles.completed : styles.incomplete]}>
+            <Text style={styles.goalText}>{goal.title}</Text>
+            <Text>{`Due Date: ${goal.dueDate}`}</Text>
           </View>
         </Pressable>
       ))}
@@ -16,7 +17,7 @@ function ToDoList({ tasks, toggleTask }) {
 }
 
 const styles = StyleSheet.create({
-  task: {
+  goal: {
     padding: 10,
     marginBottom: 5,
     borderColor: '#cccccc',
@@ -27,9 +28,9 @@ const styles = StyleSheet.create({
   incomplete: {
     backgroundColor: '#ffffff',
   },
-  taskText: {
+  goalText: {
     fontSize: 16,
   },
 });
 
-export default ToDoList;
+export default GoalList;

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#A52A2A', // brown color
+    backgroundColor: '#FAEDCD', 
   }, 
 });
 
